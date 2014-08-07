@@ -57,17 +57,20 @@
 
             function checkResult() {
                 //Check if any side has won
-                for(var i=0; i<=8; i++) {
-                    if(board[winningCombinations[i][0]].toString() == symbol && 
-                      board[winningCombinations[i][1]].toString() == symbol &&
-                      board[winningCombinations[i][2]].toString() == symbol) {
+                for(var i=0; i<8; i++) {
+                    if(board[winningCombinations[i][0]] == symbol && 
+                      board[winningCombinations[i][1]] == symbol &&
+                      board[winningCombinations[i][2]] == symbol) {
                         alert(symbol + ' has won the match!');
+                        window.location.reload(false);
                     }
                 }
 
                 //If no more box, alert game over
-                if(turn >= 9)
+                if(turn >= 9) {
                     alert('The game has been drawn!')
+                    window.location.reload(false);
+                }
 
             }
 
